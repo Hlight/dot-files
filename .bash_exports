@@ -1,0 +1,33 @@
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+	export TERM=gnome-256color
+elif infocmp xterm-256color >/dev/null 2>&1; then
+	export TERM=xterm-256color
+fi
+
+# Read terminal profile title
+# http://superuser.com/a/198416
+read_xterm_title () {
+  # Clear IFS so that read doesn't do any word splitting.
+  local IFS= read_xterm_title_header=
+  # $1 is expected to be a parameter name. Do a crude format check.
+  if [[ $1 = '' || $1 = *[!0-9_A-Za-z]* ]]; then return 120; fi
+  eval $1=
+echo "$1" #ao
+# Expect "ESC ] l title ESC \\"
+  read -p $'\e[21t' -s -t 1 -r -n 3 read_xterm_title_header &&
+  [[ $read_xterm_title_header = $'\e]l' ]] &&
+  read -p '' -s -t 1 -r -d $'\e' $1 &&
+  read -s -t 1 -r -n 1
+}
+
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+
+# no ._ files in archives please
+export COPYFILE_DISABLE=true
+
+# Android Remote Debugging in Chrome
+#export PATH=$PATH:/home/aaron/projects/adt-bundle-linux-x86_64-20130514/sdk/platform-tools/

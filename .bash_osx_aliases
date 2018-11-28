@@ -1,0 +1,10 @@
+# Bash OSX Aliases
+
+# showFiles (shows hidden files in finder)
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+
+# hideFiles (hides hidden files in finder)
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# ls colored output, dir slashes, and -h option
+alias ls='ls -ph'
