@@ -10,11 +10,11 @@ My bash "dot" configuration files e.g. ".bashrc, .bash_aliases, etc.."
 ### Clone Repo:
 
 ```bash
-    # HTTPS URL:
-    git clone https://github.com/Hlight/dot-files.git
+# HTTPS URL:
+git clone https://github.com/Hlight/dot-files.git
 
-    # SSH URL:
-    git clone  git@github.com:Hlight/dot-files.git
+# SSH URL:
+git clone  git@github.com:Hlight/dot-files.git
 
 ```
 
@@ -24,7 +24,7 @@ My bash "dot" configuration files e.g. ".bashrc, .bash_aliases, etc.."
 # Go to user home directory.
 cd ~
 
-# Recursive Command to Rename .bash_whatever to off.bash_whatever.
+# Recursive Command to Rename ".bash_whatever" to "off.bash_whatever".
 find . -maxdepth 1 -name '.bash_*' -exec bash -c 'echo mv $0 ${0/.bash/off.bash}' {} \;
 ```
 
