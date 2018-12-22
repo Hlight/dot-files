@@ -18,12 +18,12 @@ function fs() {
 }
 
 # Use Git’s colored diff when available
-hash git &>/dev/null
-if [ $? -eq 0 ]; then
-    function diff() {
-        git diff --no-index --color-words "$@"
-    }
-fi
+# hash git &>/dev/null
+# if [ $? -eq 0 ]; then
+#     function diff() {
+#         git diff --no-index --color-words "$@"
+#     }
+# fi
 
 # Create a data URL from a file
 function dataurl() {
@@ -141,11 +141,23 @@ function str_findInFile() {
 export -f str_findInFile
 
 
+## A helper function to launch docker container using mattrayner/lamp with overrideable parameters
+#
+# $1 - Apache Port (optional)
+# $2 - MySQL Port (optional - no value will cause MySQL not to be mapped)
+function launchdockerwithparams {
+    APACHE_PORT=80
+    MYSQL_PORT_COMMAND=""
+    
+    if ! [[ -z "$1" ]]; then
+        APACHE_PORT=$1
+    fi
+    
+    if ! [[ -z "$2" ]]; then
+        MYSQL_PORT_COMMAND="-p \"$2:3306\""
+    fi
 
-# Put this in ~/.profile, and replace ~/vagrant-web/websites with wherever
-# your websites actually are. - Dave Poole
-website() {
-     if [[ $@ == bfg_* ]]; then
-         cd /websites/bfg/share/sites/${@}
-     fi
+    docker run -i -t -p "$APACHE_PORT:80" $MYSQL_PORT_COMMAND -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql mattrayner/lamp:latest
 }
+alias launchdocker='launchdockerwithparams $1 $2'
+alias ldi='launchdockerwithparams $1 $2'
