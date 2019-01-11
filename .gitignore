@@ -1,1 +1,7 @@
+# BigFishGames aliases
 .bash_bfg_aliases
+# BASH History created automiatcally
+.bash_history
+
+# snippets file for bash
+snippets.md
