@@ -1,3 +1,6 @@
+# Next line needs to be in .bashrc to load this file (named ".bash_prompt")
+# [ -r ".bash_prompt" ] && source ".bash_prompt"
+#
 # My awesome bash prompt
 #
 # Copyright (c) 2012 "Cowboy" Ben Alman
