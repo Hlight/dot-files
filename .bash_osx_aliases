@@ -8,6 +8,15 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 
 # ls Colored Output
-alias ls="ls -Gp"
+alias ls="ls -pG"
 alias la="ls -a"
 alias ll="ls -l"
+
+# Meld diff/merge tool
+alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
+
+# print file permissions in Octal format
+# > stat -f %A getOpts.py 
+# > 644
+alias perm="stat -f %A $1"
+
