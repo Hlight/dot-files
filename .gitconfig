@@ -1,0 +1,60 @@
+[user]
+	email = aaronostrowsky@gmail.com
+	name = Aaron
+[core]
+	excludesfile = /Users/aaronostrowsky/.gitignore_global
+	editor = code --wait
+# Comment: Start of "Extra Block"
+# Comment: This is to unlock VSCode as your git diff and git merge tool    
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+# Comment: End of "Extra Block"
+
+# # USE: sourcetree
+# [difftool "sourcetree"]
+# 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+# 	path = 
+# [mergetool "sourcetree"]
+# 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+# 	trustExitCode = true
+
+# # USE: p4mergetool
+# [diff]
+# 	tool = p4mergetool
+# [difftool "p4mergetool"]
+# 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+# [merge]
+# 	tool = p4mergetool
+# [mergetool "p4mergetool"]
+# 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+# 	trustExitCode = false
+# [mergetool]
+# 	keepBackup = false
+# [difftool]
+# 	# prompt = false
+
+
+
+#### USE: meld
+# Optional command line usage place below line in .bashrc
+# alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
