@@ -1,5 +1,7 @@
 [user]
-	email = aaronostrowsky@gmail.com
+  # encrypted via https://marketplace.visualstudio.com/items?itemName=RushFrisby.Encryptor
+  # password = linux box password
+	email = 7cd4880d077dce51d8b9f7a092060fdc1c73bab63218912c47ee7aa97c26bbab
 	name = Aaron
 [core]
 	excludesfile = /Users/aaronostrowsky/.gitignore_global
