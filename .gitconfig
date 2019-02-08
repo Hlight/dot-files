@@ -1,6 +1,6 @@
+# encrypted via https://marketplace.visualstudio.com/items?itemName=RushFrisby.Encryptor
+# password = linux box password
 [user]
-  # encrypted via https://marketplace.visualstudio.com/items?itemName=RushFrisby.Encryptor
-  # password = linux box password
 	email = 7cd4880d077dce51d8b9f7a092060fdc1c73bab63218912c47ee7aa97c26bbab
 	name = Aaron
 [core]
@@ -60,3 +60,12 @@
 [mergetool "meld"]
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !smerge .
