@@ -1,7 +1,7 @@
 # encrypted via https://marketplace.visualstudio.com/items?itemName=RushFrisby.Encryptor
 # password = linux box password
 [user]
-	email = aaronostrowsky@gmail.com
+	email = 7cd4880d077dce51d8b9f7a092060fdc1c73bab63218912c47ee7aa97c26bbab
 	name = Aaron
 [core]
 	excludesfile = /Users/aaronostrowsky/.gitignore_global
@@ -69,3 +69,18 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	visual = !smerge .
+	diffancy = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
