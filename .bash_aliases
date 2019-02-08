@@ -42,6 +42,8 @@ alias g="git"
 alias g:cache="git config --global credential.helper 'cache --timeout 28800'"
 alias g:clear="git credential-cache exit"
 alias gits="git status"
+# See an ASCII art tree of all the branches, decorated with the names of tags and branches: 
+alias git:log="git log --graph --oneline --decorate --all"
 alias h="history"
 alias hist='history | grep $1' #Requires one input
 # Sublime Text
