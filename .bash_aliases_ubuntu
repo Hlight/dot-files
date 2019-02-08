@@ -1,0 +1,56 @@
+# Ubuntu-only stuff. Abort if not Ubuntu.
+[[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
+
+# Package management
+alias update="sudo apt-get -qq update && sudo apt-get upgrade"
+alias install="sudo apt-get install"
+alias remove="sudo apt-get remove"
+alias search="apt-cache search"
+
+# Open directory in Ubuntu Finder
+alias open="nautilus"
+
+# Display file permissions in octal mode
+alias llperm="stat -c '%a %n' "
+
+# Display directory size
+alias filesize:total="du -sch $1"
+alias filesize="du -hd1 $1"
+
+
+# Android Remote Debugging on Chrome - launch chrome developer tools panel for USB connected Android device
+alias adbLaunch="adb forward tcp:9222 localabstract:chrome_devtools_remote"
+
+# Prompts to select which terminal emulator to use for launching via ctrl+alt+t
+alias update:default:terminal="sudo update-alternatives --config x-terminal-emulator"
+
+
+# Display running processes
+alias process:show="ps -ef"
+
+# Display processes that match argument
+alias process:find="ps -ef | grep $1"
+
+# Kill zombie processes
+alias process:kill:zombies="kill $(ps -A -ostat,ppid | awk '/[zZ]/{print $2}')"
+
+
+## Show Ubuntu Version info
+alias os:version="echo '
+Version:' && lsb_release -a"
+alias os:kernel="echo '
+Installed Kernel:' && uname -ri"
+alias os:available_kernels="echo '
+Available Kernels:' && ls /lib/modules"
+## Show Ubuntu Hardware info
+alias os:hardware="echo '
+Installed Hardware:
+' && sudo lspci"
+alias os:hardware:videocard="echo '
+## Video Card ##' && os:hardware | grep VGA"
+alias os:hardware:audiocard="echo '
+## Audio Card ##' && os:hardware | grep Audio"
+## Display all Ubuntu info
+alias os:info="echo '========
+OS INFO:
+========' && os:version && os:kernel && os:available_kernels && os:hardware:videocard && os:hardware:audiocard"
