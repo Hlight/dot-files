@@ -29,11 +29,7 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 # alias ~="cd ~"
 
-# Clear screen faster
-alias c='clear'
 
-# User locations
-alias db="cd ~/Dropbox"
 
 # Application shortcuts
 alias v="vim" #open vim

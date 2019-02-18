@@ -76,3 +76,9 @@ alias rm:svn-commit="find . -name 'svn-commit*tmp' -type f -delete"
 # alias cleanDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias rm:DS_Store="find . -name '*.DS_Store' -type f -delete"
 alias dsstore="find . -name '*.DS_store*' -type f -ls -delete"
+
+# Clear screen faster
+alias c='clear'
+
+# User locations
+alias db="cd ~/Dropbox"
