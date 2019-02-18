@@ -54,3 +54,24 @@ alias os:hardware:audiocard="echo '
 alias os:info="echo '========
 OS INFO:
 ========' && os:version && os:kernel && os:available_kernels && os:hardware:videocard && os:hardware:audiocard"
+
+
+#########
+# Logging
+# sudo apt-get install multitail (allows tailing multiple files at once)
+alias logs:multitail="multitail /var/log/syslog /var/log/apache2/error.log"
+# sudo apt-get install grc (allows colored output for tail and other commands)
+if hash grc  > /dev/null 2>&1; then
+alias logs:tail:apache="grc tail -fn 200 /var/log/apache2/error.log"
+alias logs:view:apache="vi /var/log/apache2/error.log"
+alias logs:tail:syslog="grc tail -fn 200 /var/log/syslog"
+alias logs:grep:syslog="grc tail -fn 1000 /var/log/syslog | grep $1 --line-buffered"
+alias logs:view:syslog="vi /var/log/syslog"
+alias logs:tail:jenkins="grc tail -fn 200 /var/log/jenkins/jenkins.log"
+else
+alias logs:tail:apache="tail -fn 200 /var/log/apache2/error.log"
+alias logs:view:apache="vi /var/log/apache2/error.log"
+alias logs:tail:syslog="tail -fn 200 /var/log/syslog"
+alias logs:view:syslog="vi /var/log/syslog"
+alias logs:tail:jenkins="tail -fn 200 /var/log/jenkins/jenkins.log"
+fi

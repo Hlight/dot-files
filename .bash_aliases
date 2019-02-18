@@ -84,37 +84,6 @@ alias chmod:folders="sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmo
 alias chmod:folders:775="sudo find /path/to/Dir -type d -print0 | xargs -0 sudo chmod 775"
 
 
-###################
-# File manipulation
-# Patch diff files for working svn directory
-alias my:patch="patch --verbose -p0 < $1"
-# Remove annoying files
-alias rm:DS_Store="find . -name '*.DS_Store' -type f -delete"
-alias rm:svn-commit="find . -name 'svn-commit*tmp' -type f -delete"
-# Recursively delete `.DS_Store` files
-# alias cleanDS="find . -type f -name '*.DS_Store' -ls -delete"
-alias dsstore="find . -name '*.DS_store*' -type f -ls -delete"
-
-#########
-# Logging
-# sudo apt-get install multitail (allows tailing multiple files at once)
-alias logs:multitail="multitail /var/log/syslog /var/log/apache2/error.log"
-# sudo apt-get install grc (allows colored output for tail and other commands)
-if hash grc  > /dev/null 2>&1; then
-alias logs:tail:apache="grc tail -fn 200 /var/log/apache2/error.log"
-alias logs:view:apache="vi /var/log/apache2/error.log"
-alias logs:tail:syslog="grc tail -fn 200 /var/log/syslog"
-alias logs:grep:syslog="grc tail -fn 1000 /var/log/syslog | grep $1 --line-buffered"
-alias logs:view:syslog="vi /var/log/syslog"
-alias logs:tail:jenkins="grc tail -fn 200 /var/log/jenkins/jenkins.log"
-else
-alias logs:tail:apache="tail -fn 200 /var/log/apache2/error.log"
-alias logs:view:apache="vi /var/log/apache2/error.log"
-alias logs:tail:syslog="tail -fn 200 /var/log/syslog"
-alias logs:view:syslog="vi /var/log/syslog"
-alias logs:tail:jenkins="tail -fn 200 /var/log/jenkins/jenkins.log"
-fi
-
 ############
 # LS ALIASES
 # Detect which `ls` flavor is in use
@@ -184,33 +153,11 @@ alias treee="tree -CAfia -I 'CVS|*.*.package|.svn|.git' --dirsfirst"
 alias otree="tree "
 
 
-# Gzip-enabled `curl`
-alias gurl="curl --compressed"
-
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-# alias localip="ipconfig getifaddr en1"
-# alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
-
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
 
-
-# URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-
 alias encodeURL='sed -f ~/Dropbox/url_escape.sed'
 alias encodeHTML='sed -f ~/Dropbox/html_escape.sed'
-
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-    alias "$method"="lwp-request -m '$method'"
-done
-
-
-### PHP COMMAND LINE
-alias php:constants="php -r 'print_r(get_defined_constants());'"
 
 ### Linux Ubuntu
 if [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
@@ -229,14 +176,9 @@ if [ -f ~/.bash_bfg_aliases ]; then
 fi
 
 
-################
-### Snippets ###
-# Using these to remember commands by only printing the command.
-alias snippet:rename="echo 'for f in *.php; do mv \$f \${f}; done'"
 
 
-### GREP Snippets
-alias phpShowExtensionsEnabled='grep -Hrv ";" /etc/php5 | grep -E "extension(\s+)?="'
+
 
 
 

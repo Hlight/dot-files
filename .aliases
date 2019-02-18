@@ -1,0 +1,78 @@
+# .aliases dot file, shared by bash & zsh.
+
+# Purging a file from your repository's history
+
+# Using the BFG
+
+# The BFG Repo-Cleaner is a tool that's built and maintained by the open source community. It provides a faster, simpler alternative to git filter-branch for removing unwanted data. For example, to remove your file with sensitive data and leave your latest commit untouched, run:
+
+# $ bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA
+
+# To replace all text listed in passwords.txt wherever it can be found in your repository's history, run:
+
+# bfg --replace-text passwords.txt
+# See the BFG Repo-Cleaner's documentation for full usage and download instructions.
+
+# Usage
+# First clone a fresh copy of your repo, using the --mirror flag:
+
+# $ git clone --mirror git://example.com/some-big-repo.git
+# This is a bare repo, which means your normal files won't be visible, but it is a full copy of the Git database of your repository, and at this point you should make a backup of it to ensure you don't lose anything.
+
+# Now you can run the BFG to clean your repository up:
+
+# $ java -jar bfg.jar --strip-blobs-bigger-than 100M some-big-repo.git
+# The BFG will update your commits and all branches and tags so they are clean, but it doesn't physically delete the unwanted stuff. Examine the repo to make sure your history has been updated, and then use the standard git gc command to strip out the unwanted dirty data, which Git will now recognise as surplus to requirements:
+
+# $ cd some-big-repo.git
+# $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
+# Finally, once you're happy with the updated state of your repo, push it back up (note that because your clone command used the --mirror flag, this push will update all refs on your remote server):
+
+# $ git push
+# At this point, you're ready for everyone to ditch their old copies of the repo and do fresh clones of the nice, new pristine data. It's best to delete all old clones, as they'll have dirty history that you don't want to risk pushing back into your newly cleaned repo.
+
+# https://rtyley.github.io/bfg-repo-cleaner/
+
+# Remove file from entire git history.
+# $ bfg --delete-files $1
+alias bfg="java -jar ~/bin/bfg-1.13.0.jar"
+
+################
+### Snippets ###
+# Using these to remember commands by only printing the command.
+alias snippet:rename="echo 'for f in *.php; do mv \$f \${f}; done'"
+
+### GREP Snippets
+alias phpShowExtensionsEnabled='grep -Hrv ";" /etc/php5 | grep -E "extension(\s+)?="'
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="lwp-request -m '$method'"
+done
+
+
+### PHP COMMAND LINE
+alias php:constants="php -r 'print_r(get_defined_constants());'"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+
+# Gzip-enabled `curl`
+alias gurl="curl --compressed"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+# alias localip="ipconfig getifaddr en1"
+# alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+###################
+# File manipulation
+# Patch diff files for working svn directory
+alias my:patch="patch --verbose -p0 < $1"
+# Remove annoying files
+alias rm:svn-commit="find . -name 'svn-commit*tmp' -type f -delete"
+# Recursively delete `.DS_Store` files
+# alias cleanDS="find . -type f -name '*.DS_Store' -ls -delete"
+alias rm:DS_Store="find . -name '*.DS_Store' -type f -delete"
+alias dsstore="find . -name '*.DS_store*' -type f -ls -delete"
