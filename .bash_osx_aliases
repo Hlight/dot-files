@@ -6,11 +6,15 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 # hideFiles (hides hidden files in finder)
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-
+# Let LS work with Aliases
+alias ls="ls "
 # ls Colored Output
 alias ls="ls -pG"
 alias la="ls -a"
 alias ll="ls -l"
+
+# Show file tree 2 levels deep and ignore node_modules
+alias t="tree -L 2 -I node_modules"
 
 # Meld diff/merge tool
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
@@ -20,3 +24,13 @@ alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 # > 644
 alias perm="stat -f %A $1"
 
+# Running servers
+alias running="lsof -iTCP -sTCP:LISTEN -n -P"
+
+
+# UWASEA201811FSF5 Aliases
+alias callRandom="node ~/Code/gitlab/Hlight/UWASEA201811FSF5/_tools/bootcamp-aarons-random-student/random-student.js"
+
+alias classContent="~/Documents/TrilogyEd/FullStack-Lesson-Plans/01-Class-Content/"
+
+alias lessonPlans="~/Documents/TrilogyEd/FullStack-Lesson-Plans/02-lesson-plans/part-time/"

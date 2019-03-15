@@ -82,3 +82,21 @@ alias c='clear'
 
 # User locations
 alias db="cd ~/Dropbox"
+
+
+# GNU coreutils aliases
+# NOTE: GNU commands prefixed with 'g' e.g. ls -> gls
+# GNU ls
+alias gls="gls --color=auto"
+# store old ls if we want it
+alias ols="/bin/ls"
+# new ls using gls
+# alias ls="gls -w0 --color"
+alias ls="gls -a --color=auto"
+# to enable dircolors
+# NOTE: GNU dircolors > gdircolors
+# Create .dir_colors with the output from below command:
+# > gdircolors ~/Code/github/seebi/dircolors-solarized /dircolors.256dark 
+eval `gdircolors ~/.dir_colors`
+
+

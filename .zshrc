@@ -10,7 +10,7 @@ export ZSH="/Users/aaronostrowsky/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="cobalt2"
+ZSH_THEME="cobalt2-ao"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,9 +106,24 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add ~/bin/ to PATH
 export PATH=$PATH:$HOME/bin
+# Add MySQL command location to path
+export PATH=$PATH:/usr/local/mysql/bin/
 
 # Source bash dot files
-for file in ~/.{functions,aliases,bash_osx_aliases}; do
+for file in ~/.{functions,bash_osx_aliases,aliases}; do
 	[ -r "$file" ] && source "$file"
 done
+
+# zsh functions here
+function list_all() {
+    emulate -L zsh
+    # ls -a
+    if type gls > /dev/null 2>&1; 
+        then 
+        gls -Cap
+    else
+        ls -a
+    fi
+}
+chpwd_functions=(${chpwd_functions[@]} "list_all")
 
