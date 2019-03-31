@@ -11,6 +11,7 @@ export ZSH="/Users/aaronostrowsky/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 ZSH_THEME="cobalt2-ao"
+# ZSH_THEME="terminalparty"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

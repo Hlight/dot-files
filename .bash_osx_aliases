@@ -6,6 +6,10 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 # hideFiles (hides hidden files in finder)
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
+#--------------
+# Listing Files
+#--------------
+
 # Let LS work with Aliases
 alias ls="ls "
 # ls Colored Output
@@ -16,9 +20,6 @@ alias ll="ls -l"
 # Show file tree 2 levels deep and ignore node_modules
 alias t="tree -L 2 -I node_modules"
 
-# Meld diff/merge tool
-alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
-
 # print file permissions in Octal format
 # > stat -f %A getOpts.py 
 # > 644
@@ -26,11 +27,33 @@ alias perm="stat -f %A $1"
 
 # Running servers
 alias running="lsof -iTCP -sTCP:LISTEN -n -P"
+# Listening servers (same as running)
+alias listening="lsof -iTCP -sTCP:LISTEN -n -P"
 
+#----------------------
+# Clear terminal screen
+alias screen="echo '\033c'"
 
+#-----------
+# Diff Tools
+#-----------
+
+# Meld diff/merge tool
+alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
+
+#-------------------------
 # UWASEA201811FSF5 Aliases
+#-------------------------
+
 alias callRandom="node ~/Code/gitlab/Hlight/UWASEA201811FSF5/_tools/bootcamp-aarons-random-student/random-student.js"
+alias p="callRandom --align right --font random"
+alias pp="callRandom --clearOnCall --align right --font random"
 
 alias classContent="~/Documents/TrilogyEd/FullStack-Lesson-Plans/01-Class-Content/"
 
 alias lessonPlans="~/Documents/TrilogyEd/FullStack-Lesson-Plans/02-lesson-plans/part-time/"
+
+alias classRepoDir="~/Code/gitlab/Hlight/UWASEA201811FSF5/"
+alias crd="classRepoDir"
+alias classRepoDestDir="~/Code/gitlab/Hlight/UWASEA201811FSF5_download/"
+alias crdd="classRepoDestDir"

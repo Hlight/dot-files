@@ -66,6 +66,8 @@
 	br = branch
 	ci = commit
 	st = status
+	s = status -s -u33b4d651c71f945a789bf9836339ccf25977eea0d410d13700ef9879f97a8c12b867221fa840be13b737c1a996a81f95
+
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	visual = !smerge .
