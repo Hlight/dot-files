@@ -1,11 +1,8 @@
-# BigFishGames aliases
-.bash_bfg_aliases
+.DS_Store
+
 # BASH History created automiatcally
 .bash_history
 
 # .gitconfig has decrypted secrets in it
 # .gitconfig-commit has the secrets encrypted so it's safe to be committed.
 .gitconfig
-
-# snippets file for bash
-snippets.md
