@@ -167,9 +167,9 @@ fi
 ### PROJECT ALIASES ###
 #######################
 # Big Fish Games
-if [ -f ~/.bash_bfg_aliases ]; then
-    . ~/.bash_bfg_aliases
-fi
+# if [ -f ~/.bash_bfg_aliases ]; then
+#     . ~/.bash_bfg_aliases
+# fi
 
 
 
