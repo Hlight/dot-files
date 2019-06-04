@@ -16,6 +16,7 @@ alias ls="ls "
 alias ls="ls -pG"
 alias la="ls -a"
 alias ll="ls -l"
+alias l="ls -1"
 
 # Show file tree 2 levels deep and ignore node_modules
 alias t="tree -L 2 -I node_modules"
@@ -26,9 +27,11 @@ alias t="tree -L 2 -I node_modules"
 alias perm="stat -f %A $1"
 
 # Running servers
-alias running="lsof -iTCP -sTCP:LISTEN -n -P"
+alias servers:running="lsof -iTCP -sTCP:LISTEN -n -P"
 # Listening servers (same as running)
-alias listening="lsof -iTCP -sTCP:LISTEN -n -P"
+alias servers:listening="lsof -iTCP -sTCP:LISTEN -n -P"
+# running servers on a given port
+alias servers:port="lsof -i $1"
 
 #----------------------
 # Clear terminal screen
@@ -48,6 +51,10 @@ alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias callRandom="node ~/Code/gitlab/Hlight/UWASEA201811FSF5/_tools/bootcamp-aarons-random-student/random-student.js"
 alias p="callRandom --align right --font random"
 alias pp="callRandom --clearOnCall --align right --font random"
+alias pSay="p --p --fullname | say -v Daniel"
+alias pSayTest="p --logFile=/test.json --p --fullname | say -v Daniel"
+
+alias say="say -v Daniel"
 
 alias classContent="~/Documents/TrilogyEd/FullStack-Lesson-Plans/01-Class-Content/"
 
