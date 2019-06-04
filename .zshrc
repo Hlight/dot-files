@@ -126,5 +126,6 @@ function list_all() {
         ls -a
     fi
 }
+# after each cd list dir contents
 chpwd_functions=(${chpwd_functions[@]} "list_all")
 
