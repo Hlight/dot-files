@@ -129,3 +129,13 @@ function list_all() {
 # after each cd list dir contents
 chpwd_functions=(${chpwd_functions[@]} "list_all")
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/aaronostrowsky/Code/lululemon/Booking-Details/wae-booking-details/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/aaronostrowsky/Code/lululemon/Booking-Details/wae-booking-details/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/aaronostrowsky/Code/lululemon/Booking-Details/wae-booking-details/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/aaronostrowsky/Code/lululemon/Booking-Details/wae-booking-details/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/aaronostrowsky/Code/lululemon/Booking-Details/wae-booking-details/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/aaronostrowsky/Code/lululemon/Booking-Details/wae-booking-details/node_modules/tabtab/.completions/slss.zsh
