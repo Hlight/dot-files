@@ -1,5 +1,14 @@
 # .aliases dot file, shared by bash & zsh.
 
+#--------------------------- rmtrash/rm setup
+# Use a command line tool like rmtrash or a script tat uses appscript to call the Finder to do there delete.
+#
+# After installing rmtras to say /usr/local/bin/rmtrash the creat an alias for bash
+#
+alias rm='rmtrash'
+# You can use \rm to call rm directly and ignore the alias
+#-------------------------- end rmtrash/rm setup
+
 # Purging a file from your repository's history
 
 # Using the BFG
@@ -98,5 +107,15 @@ alias ls="gls -a --color=auto"
 # Create .dir_colors with the output from below command:
 # > gdircolors ~/Code/github/seebi/dircolors-solarized /dircolors.256dark 
 eval `gdircolors ~/.dir_colors`
+
+
+#=======================================================
+# HVYLITE audio alias's
+# AudioUnits - System Install Location
+alias path_audiounits="/Library/Audio/Plug-Ins/Components"
+# VSTs - System Install Location
+alias path_vsts="/Library/Audio/Plug-Ins/VST"
+#=======================================================
+
 
 
