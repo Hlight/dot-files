@@ -64,3 +64,5 @@ ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_exports ~/.bash_exports;
 ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_functions ~/.bash_functions;
 ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_history ~/.bash_history;
 
+# Install smerge command via sylink to SublimeMerge app (https://www.sublimemerge.com/docs/command_line):
+ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" ~/bin/smerge
