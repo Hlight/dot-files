@@ -44,3 +44,30 @@ ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_functions ~/.bash_functio
 ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_history ~/.bash_history;
 
 ```
+
+## VSCode 
+
+#### Settings
+
+Simply copy `settings.json` from host machine to new machine.
+
+Host machine location:
+`~/Library/Application Support/Code/User/settings.json`
+
+---
+
+#### Extensions
+
+Run commands in `./vscode-copy-extensions.txt`
+
+...or to generate a new list of all currently installed extensions:
+
+ Get installed VSCode extensions via commandline:
+```shell
+code --list-extensions | xargs -L 1 echo code --install-extension > vscode-extensions-installed.txt
+```
+ 
+ * Open file in text editor, add ";" to end of each line
+ * then, copy and paste entire contents and paste into terminial
+ * this will install all of the extensions installed on the original computer
+

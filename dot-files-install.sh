@@ -20,6 +20,15 @@ curl -o- https://raw.githubusercontent.com
 # Install GNU coreutils
 # https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
 brew install coreutils
+# Install Yarn node package manager
+brew install yarn
+# Install diff-so-fancy
+npm install -g diff-so-fancy
+# Install pnpm (effecient package manager)
+npm install -g pnpm
+pnpm add -g pnpm # update pnpm after above install
+# Install rmtrash (we alias rm to this so stuff gets put into the trash see alias's)
+brew install rmtrash
 
 
 #----------------------
