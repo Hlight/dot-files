@@ -29,6 +29,9 @@ npm install -g pnpm
 pnpm add -g pnpm # update pnpm after above install
 # Install rmtrash (we alias rm to this so stuff gets put into the trash see alias's)
 brew install rmtrash
+# Install git-extras 
+# https://github.com/tj/git-extras/blob/master/Installation.md
+brew install git-extras
 
 
 #----------------------
