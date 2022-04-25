@@ -5,7 +5,7 @@
 #
 # After installing rmtras to say /usr/local/bin/rmtrash the creat an alias for bash
 #
-alias rm='rmtrash'
+# alias rm='rmtrash' # NOTE 'rmtrash' for OSX no workie since 2020! :(
 # You can use \rm to call rm directly and ignore the alias
 #-------------------------- end rmtrash/rm setup
 
