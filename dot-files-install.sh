@@ -54,27 +54,27 @@ cp -r oh-my-zsh-custom/custom/plugins/git-open  ~/.oh-my-zsh/custom/plugins/
 cp -r oh-my-zsh-custom/custom/plugins/zsh-syntax-highlighting  ~/.oh-my-zsh/custom/plugins/
 cp -r oh-my-zsh-custom/custom/plugins/zsh-syntax-highlighting-filetypes  ~/.oh-my-zsh/custom/plugins/
 
-# Below symlinks requires Dropbox Installed with dot-files repo in ~/Dropbox/Aaron/Terminal\ Extras/ location.
+# Below symlinks requires Dropbox Installed with dot-files repo in ~/Code/github/Hlight/ location.
 # ".gitconfig-commit" must be updated and renamed to .gitconfig
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.gitconfig ~/.gitconfig;
+ln -s ~/Code/github/Hlight/dot-files/.gitconfig ~/.gitconfig;
 # dir_colors needed for colored file output using ls
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/dircolors.256dark ~/.dir_colors;
+ln -s ~/Code/github/Hlight/dot-files/dircolors.256dark ~/.dir_colors;
 # bash rc file
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bashrc ~/.bashrc;
+ln -s ~/Code/github/Hlight/dot-files/.bashrc ~/.bashrc;
 # zsh rc file
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.zshrc ~/.zshrc;
+ln -s ~/Code/github/Hlight/dot-files/.zshrc ~/.zshrc;
 # zsh & bash shared profile, aliases and functions. 
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.profile ~/.profile;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.aliases ~/.aliases;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.functions ~/.functions;
+ln -s ~/Code/github/Hlight/dot-files/.profile ~/.profile;
+ln -s ~/Code/github/Hlight/dot-files/.aliases ~/.aliases;
+ln -s ~/Code/github/Hlight/dot-files/.functions ~/.functions;
 # bash 
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_prompt_alex ~/.bash_prompt;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_profile ~/.bash_profile;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_aliases ~/.bash_aliases;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_osx_aliases ~/.bash_osx_aliases;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_exports ~/.bash_exports;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_functions ~/.bash_functions;
-ln -s ~/Dropbox/Aaron/Terminal\ Extras/dot-files/.bash_history ~/.bash_history;
+ln -s ~/Code/github/Hlight/dot-files/.bash_prompt_alex ~/.bash_prompt;
+ln -s ~/Code/github/Hlight/dot-files/.bash_profile ~/.bash_profile;
+ln -s ~/Code/github/Hlight/dot-files/.bash_aliases ~/.bash_aliases;
+ln -s ~/Code/github/Hlight/dot-files/.bash_osx_aliases ~/.bash_osx_aliases;
+ln -s ~/Code/github/Hlight/dot-files/.bash_exports ~/.bash_exports;
+ln -s ~/Code/github/Hlight/dot-files/.bash_functions ~/.bash_functions;
+ln -s ~/Code/github/Hlight/dot-files/.bash_history ~/.bash_history;
 
 # Install smerge command via sylink to SublimeMerge app (https://www.sublimemerge.com/docs/command_line): requires ~/bin/ directory
 ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" ~/bin/smerge
