@@ -108,6 +108,10 @@ alias ls="gls -a --color=auto"
 # > gdircolors ~/Code/github/seebi/dircolors-solarized /dircolors.256dark 
 eval `gdircolors ~/.dir_colors`
 
+## Print random password
+# openssl rand -base64 12
+alias gen:pswd="openssl rand -base64"
+alias gen:pswd:12="openssl rand -base64 12"
 
 #=======================================================
 # HVYLITE audio alias's
